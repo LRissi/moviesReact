@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
+import { View, FlatList } from 'react-native';
 import RowMovies from './components/RowMovies';
 import axios from 'axios';
 

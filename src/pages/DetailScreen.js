@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Linking } from 'expo';
@@ -32,7 +32,7 @@ const DetailScreen = ({ navigation, route }) => {
         <View style={styles.content}>
           <Text style={styles.year}>{`Ano: ${movie.year}`}</Text>
           <Text
-            style={{ ...styles.rating, color: movie.rating > 6 ? 'yellow' : 'red' }}
+            style={{ ...styles.rating, color: movie.rating > 6 ? 'lightgreen' : 'red' }}
           >{`Nota: ${movie.rating}`}</Text>
           <Text style={styles.rating}>{getStars()}</Text>
 
@@ -42,7 +42,7 @@ const DetailScreen = ({ navigation, route }) => {
 
           <Text style={styles.subtitle}>Descrição</Text>
           <Text style={styles.description}>{movie.description_full}</Text>
-          <Text style={styles.subtitle}>Generos</Text>
+          <Text style={styles.subtitle}>Gêneros</Text>
           {movie.genres.map((genre) => (
             <Text style={styles.description}>{` - ${genre}`}</Text>
           ))}
@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   description: {
     marginTop: 8,
     color: 'white',
+    textAlign: 'justify',
     fontSize: 14,
   },
   banner: {
@@ -92,14 +93,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   year: {
-    marginTop: 8,
+    marginTop: 7,
     color: '#ccc',
-    fontSize: 14,
+    fontSize: 13,
   },
   rating: {
     marginTop: 8,
     color: 'yellow',
-    fontSize: 12,
+    fontSize: 13,
   },
 });
 

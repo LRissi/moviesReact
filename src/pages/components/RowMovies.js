@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { startAsync } from 'expo/build/AR';
+import React from 'react';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 const RowMovies = ({ item, onPress }) => {
   const getStars = () => {
@@ -15,7 +14,7 @@ const RowMovies = ({ item, onPress }) => {
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.year}>{`Ano: ${item.year}`}</Text>
         <Text
-          style={{ ...styles.rating, color: item.rating > 6 ? 'yellow' : 'red' }}
+          style={{ ...styles.rating, color: item.rating > 6 ? 'lightgreen' : 'red' }}
         >{`Nota: ${item.rating}`}</Text>
         <Text style={styles.rating}>{getStars()}</Text>
       </View>
